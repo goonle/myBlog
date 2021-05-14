@@ -1,0 +1,345 @@
+/* Default set */
+body{
+    margin: 0;
+}
+div{
+    margin:0;
+    padding:0;
+}
+h1{
+    font-size:40px;
+}
+
+
+/* Navigation bar */
+header img{
+    width:80px;
+    margin: 0 0 10px 20px ;
+}
+
+.nav{
+    display: block;
+    height:60px;
+    width: auto;
+    display: block;
+}
+
+.nav-right{
+    float:right;
+    margin: 15px 15px 15px 0;
+
+}
+.icons{
+    vertical-align: middle;
+    font-size:20px;
+}
+.menu{
+    padding-right:20px;
+}
+
+/* showing Menu */
+.menu:hover .hoverMenu{
+    visibility: visible;
+}
+.menu:hover .search{
+    display: none;
+    visibility:hidden;
+}
+.menu-contents{
+    padding: 0 10px;
+}
+
+.menu-contents:hover{
+    color: #aaaaaa;
+}
+.menu-contents a:hover{
+    color: #aaaaaa;
+
+}
+.hoverMenu {
+    right:60px;
+    height:30px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
+.hoverMenu a{
+    color:black;
+    text-decoration: none;
+}
+
+/* search box */
+.search{
+    height:30px;
+    background-color: #eeeeee;
+    border-radius:30px;
+}
+.search form{
+    display: inline-block;
+}
+.search-text{
+    border:0px ;
+    width:50px;
+    transition: width;
+    transition-duration: 1.5s;
+    margin: 0 5px;
+    background-color: #eeeeee;
+}
+
+.search:focus {
+    border:0;
+    border-radius:30px;
+
+}
+.search:hover{
+    border:0;
+    border-radius:30px;
+    background-color: #dddddd;
+}
+
+.search:hover .search-text{
+    width:200px;
+    border:0;
+    background-color: #dddddd;
+
+}
+
+.search .icons{
+    position:relative;
+    left:5px;
+    top:-1px;
+}
+.search-text:focus {
+    width:200px;
+    outline: none;
+    background-color: #eeeeee;
+
+}
+
+/* Content title */
+.title{
+    text-align: center;
+    /* check */
+    background-color: #fefefe;
+}
+.title div{
+    display: inline-block;
+    width:100%;
+}
+.banner-img{
+    width:80%;
+    max-width: 750px;
+}
+.title .banner{
+    /* check */
+    height:500;
+    text-align: center;
+}
+
+.title .intro{
+    height: 240px;
+    width:100%;
+    font-weight: bold;
+    padding-bottom:40px;
+}
+.intro-speech{
+    width:80%;
+    display: inline-block;
+    font-size:1.6vw;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.intro-button-space{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 20px 0;
+}
+.intro-buttons{
+    border: 0;
+    background-color: black;
+    color:white;
+    width:auto;
+    height:40px;
+    font-size: 15px;
+    border-radius: 17px;
+    margin: 0 10px;
+    padding: 0 20px;
+}
+.intro-buttons:hover{
+    background-color: #555;
+}
+.title .pictures{
+    height:420px;
+    margin-bottom: 30px;
+}
+.pictures img{
+    width:30%;
+    max-width: 330px;
+    display: inline-block;
+}
+.pictures img:hover{
+    opacity: 0.7;
+    
+}
+/* footer */
+.footer{
+    position: absolute;
+    bottom: 0;
+    margin:0;
+    background-color: #aaaaaa;
+    height:2rem;
+    color:black;
+    text-align: center;
+    width:100%;
+
+}
+/* workout.html */
+.content-box{
+    min-height: 100%;
+}
+.contents-nav{
+    padding: 10px;
+}
+.contents-showing{
+    margin-left: 30px;
+    text-align: left;
+    color:#bbbbbb;
+}
+.contents-nav-right{
+    float:right;
+}
+.contents-nav-icons{
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.contents-nav-icons:hover{
+    color:#bbb;
+}
+/* post-contents */
+
+.contents{
+    width:300px;
+    height:400px;
+    margin: 20px 20px;
+    background-color: #fafafa;
+    box-shadow: 8px 8px 10px 2px rgba(240, 240, 241, 0.719);
+    display: inline-block;
+}
+.contents-img{
+    height:50%;
+}
+.contents-img img{
+    width:300px;
+    height:200px;
+}
+.contents-explain{
+    height:50%;
+}
+.contents-explain p{
+    margin:0;
+    padding:10px 20px;
+}
+.category{
+    border: orange solid 2px;
+    color: orange;
+    text-align: center;
+
+    padding: 0 5px;
+}
+.contents-title{
+    height:75px;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding:20px;
+}
+.contents-by{
+    color: #dddddd
+}
+/* compose */
+.compose-box{
+    width:60%;
+    min-width: 450px;   
+    margin:auto;
+    border: 1px solid #eee;
+}
+
+.composeNav{
+    background-color: #eee;
+    margin:auto;
+    height:27px;
+    font-size: 20px;
+    border-bottom: 1px solid #aaa;
+}
+.composeNav button{
+    background-color: #eee;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding:0 20px;
+}
+.composeNavRight{
+    float:right;
+    background-color: #eee;
+}
+.compose-contents{
+    background-color: #ccc;
+    margin: auto;
+}
+.editPlace{
+    width:100%;
+    height:550px; 
+    background-color: #fff;}
+.uploadImg{
+    width:30%;
+    display: inline-block;
+    height:200px;
+    padding-top:20px;
+}
+#output{
+    width:90%;
+}
+.uploadText{
+    width:70%; 
+    float:right;
+}
+.uploadTextTitle{
+    width:100%;
+}
+
+.planText{
+    width:100% ;
+    border:0;
+    padding:10px 0;
+    background-color: #fff;
+    font-size:2vw;
+    resize:none;
+}
+.textTop{
+    height:20px;
+    border-bottom: solid 1.2px #ddd;
+}
+.textMiddle{
+    height:300px;
+}
+
+.planText:focus{
+    border:none;
+    outline: none;
+}
+.textTop:focus{
+    outline: none;
+    border-bottom: solid 1.2px #ddd;
+
+}
+.planItem-box{
+    background-color: #999;
+    padding:10px;
+    color:white;
+}
+.workout-select{
+    background-color: #ddd;
+    margin:auto;
+    float:right;
+    width:100px;
+}
