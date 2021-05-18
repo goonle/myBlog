@@ -183,7 +183,7 @@ header img{
 /* footer */
 .footer{
     position: absolute;
-    bottom: 0;
+
     margin:0;
     background-color: #aaaaaa;
     height:2rem;
@@ -220,7 +220,7 @@ header img{
 .contents{
     width:300px;
     height:400px;
-    margin: 20px 20px;
+    margin: 20px;
     background-color: #fafafa;
     box-shadow: 8px 8px 10px 2px rgba(240, 240, 241, 0.719);
     display: inline-block;
@@ -229,8 +229,7 @@ header img{
     height:50%;
 }
 .contents-img img{
-    width:300px;
-    height:200px;
+    width:100%;
 }
 .contents-explain{
     height:50%;
@@ -243,11 +242,10 @@ header img{
     border: orange solid 2px;
     color: orange;
     text-align: center;
-
     padding: 0 5px;
 }
 .contents-title{
-    height:75px;
+    height:37%;
     display: inline-block;
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
@@ -342,4 +340,13 @@ header img{
     margin:auto;
     float:right;
     width:100px;
+}
+
+/* media query */
+/* page size for workout.ejs's contents */
+@media all and (max-width: 1394px) and (min-width:1049px){
+    .contents{
+        margin:20px;
+    }
+ 
 }

@@ -1,24 +1,27 @@
 <%- include("header") -%>
-<nav class="content-box">
-    <nav class= contents-nav>
+<div class="content-box">
+    <div class= contents-div>
         <span class="contents-showing"> showing number to number of total posts</span>
         <span class="contents-nav-right">
             <i class="fas fa-bars contents-nav-icons"></i><i class="fas fa-th contents-nav-icons"></i>
         </span>
-    </nav>
-    <% workout.forEach((result)=>{ %>
-        <nav class = "contents">
-            <nav class = "contents-img"><img src="./image/<%= result.image %>" alt=""></nav>
-            <nav class = "contents-explain">
-                <p>
-                    <span class = "category"><%=result.category%></span> 
-                </p>
-                <span class="contents-title"><%=result.title%></span>
-                <p class="contents-by">edited at <%= result.writedTime%> by <%= result.writer%></p>
-            </nav>
-        </nav>
-    <% }) %>
+    </div>
+    <div class="item-box">
+        <% workout.forEach((result)=>{ %>
+            <div class = "contents">
+                <div class = "contents-img"><img src="./image/<%= result.image %>" alt=""></div>
+                <div class = "contents-explain">
+                    <p>
+                        <span class = "category"><%=result.category%></span> 
+                    </p>
+                    <span class="contents-title"><%=result.title%></span>
+                    <p class="contents-by">edited at <%= result.writedTime%> by <%= result.writer%></p>
+                </div>
+            </div>
+        <% }) %>
     
-</nav>
+    </div>
+    
+</div>
 <%- include("footer") -%>
 
