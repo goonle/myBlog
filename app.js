@@ -4,7 +4,6 @@ const {render} = require("ejs");
 const mongoose = require('mongoose');
 const app = express();
 
-
 mongoose.connect('mongodb://localhost:27017/myBlog', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const workoutSchema = {
@@ -116,7 +115,7 @@ app.post("/compose",function(req,res){
     const newWorkout = new Workout({
         id: getit.id,
         title: getit.title,
-        category: getit.textContent,
+        category: getit.category,
         writedTime: getDate(),
         writer: "Jun",
         image:getit.image
@@ -128,6 +127,17 @@ app.post("/compose",function(req,res){
 
 app.post("/delete",function(req,res){
     console.log(req.body)
+    const deleteItem = req.body.checkedItem
+
+    Workout.findByIdAndRemove(deleteItem,function(err){
+        if(err){
+            console.log(Item)
+            }else{
+            res.redirect("/")
+            console.log("Successfully removed the item")
+            }
+    })
+
 })
 
 app.listen(3000, function(){

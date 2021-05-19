@@ -9,19 +9,21 @@
                <span class="dWriter">Writer</span> 
             </div>
             <div class="dbList">
-                <form action="/delete" method="POST" name="deleteItem" >
+
                 <% workout.forEach((result)=>{ %>
-                   
+                    <form action="/delete" method="POST" >
                         <div class="deleteData">
                             <span class="dImg"><img class="deleteImg" src="./image/<%= result.image %>" alt=""></span>
                             <span class="dTitle"><%=result.title%></span>
                             <span class="dTime"><%= result.writedTime%></span>
                             <span class="dWriter"><%= result.writer%>  </span>  
-                            <button type="submit"><i class="far fa-file-excel"></i></button>
+                            <button class="dButton" type="submit" name="checkedItem" value="<%= result._id %>" > 
+                                <i class="far fa-file-excel"></i>
+                            </button>
                         </div>
-                
+                    </form>
+
                 <% }) %>
-                </form>
             </div>
         </div>
     </div>

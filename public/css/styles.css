@@ -349,14 +349,31 @@ header img{
     width:100px;
 }
 /* delete Page */
+h1{
+    display: inline-block;
+}
+.deletePage{
+    display: block;
+    padding-left:20px;
+    height:600px;
+    width:560px;
+    margin: 0 auto;
+
+}
 .deleteImg{
     width:45px;
     height:30px;
     position: relative;
     top:8px;
 }
+.deleteTable{
+    display: inline-block;
+        border:#fefefe solid 1px;
+}
 .deleteTable span{
     display: inline-block;
+    border-right:#fefefe solid 1px;
+    padding-left:5px;
 }
 .dImg{
     width:45px;
@@ -367,13 +384,27 @@ header img{
 }.dWriter{
     width:70px;
 }
+.dButton{
+    background-color: white;
+    border:0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color:red;
+}
 .deleteData{
     vertical-align: middle;
     height:45px;
 }
-
-
-/* media query */
+.deleteHead{
+    background-color: #eee;
+}
+.deleteData:hover{
+    background-color: #e2d02a79;
+}
+.deleteData:hover .dButton{
+    background-color: #e2d02a79;
+}
+    /* media query */
 /* page size for workout.ejs's contents */
 @media all and (min-width:1395px){
     .item-box{
@@ -420,7 +451,6 @@ header img{
         top:15px;
         left:100px;
         width:80%;
-
         text-align: center;
     }
 }
