@@ -81,7 +81,7 @@ app.get("/workout",function(req,res){
             })
         }else{
             res.render("workout",{workout: results})
-            console.log(results)
+            // console.log(results)
         }
     })
 })
@@ -115,7 +115,7 @@ app.post("/compose",function(req,res){
         writer: "Jun",
         image:getit.image
     })
-    console.log(newWorkout)
+    // console.log(newWorkout)
     Workout.insertMany(newWorkout)
     res.redirect("/workout")
 

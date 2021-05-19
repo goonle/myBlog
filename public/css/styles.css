@@ -38,13 +38,7 @@ header img{
 }
 
 /* showing Menu */
-.menu:hover .hoverMenu{
-    visibility: visible;
-}
-.menu:hover .search{
-    display: none;
-    visibility:hidden;
-}
+
 .menu-contents{
     padding: 0 10px;
 }
@@ -56,16 +50,25 @@ header img{
     color: #aaaaaa;
 
 }
-.hoverMenu {
+.wideMenu {
     right:60px;
     height:30px;
     font-size: 20px;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
   }
-.hoverMenu a{
+.wideMenu a{
     color:black;
     text-decoration: none;
+}
+.shortenMenu{
+    font-size: 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    display: none;
+}
+.shortenMenu:hover{
+    color:#bbb;
 }
 
 /* search box */
@@ -115,6 +118,7 @@ header img{
     background-color: #eeeeee;
 
 }
+
 
 /* Content title */
 .title{
@@ -216,6 +220,9 @@ header img{
     color:#bbb;
 }
 /* post-contents */
+.item-box{
+    margin: 0 auto;
+}
 
 .contents{
     width:300px;
@@ -344,9 +351,52 @@ header img{
 
 /* media query */
 /* page size for workout.ejs's contents */
+@media all and (min-width:1395px){
+    .item-box{
+        width:1395px;
+      }
+}
 @media all and (max-width: 1394px) and (min-width:1049px){
-    .contents{
-        margin:20px;
+    .item-box{
+      width:1049px;
     }
  
+}
+@media all and (max-width: 1048px) and (min-width:703px){
+    .item-box{
+        width:703px;
+      }
+  
+}
+@media all and (max-width:702px){
+    .item-box{
+        width:350px;
+      }
+
+}
+@media all and (max-width:1024px){
+    .menu{
+        display: inline-block;
+        right:0;
+    }
+    .wideMenu{
+        display: none;
+        position:absolute;
+        z-index: 1;
+        background-color: white;
+        font-size:1.2rem;
+        color:black;
+    }
+    .shortenMenu{
+        display: inline-block;
+    }
+
+    .menu:hover .wideMenu{
+        display:block;
+        top:15px;
+        left:100px;
+        width:90%;
+
+        text-align: center;
+    }
 }
