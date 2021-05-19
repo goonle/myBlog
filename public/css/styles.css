@@ -348,6 +348,30 @@ header img{
     float:right;
     width:100px;
 }
+/* delete Page */
+.deleteImg{
+    width:45px;
+    height:30px;
+    position: relative;
+    top:8px;
+}
+.deleteTable span{
+    display: inline-block;
+}
+.dImg{
+    width:45px;
+}.dTitle{
+    width:210px;
+}.dTime{
+    width:120px;
+}.dWriter{
+    width:70px;
+}
+.deleteData{
+    vertical-align: middle;
+    height:45px;
+}
+
 
 /* media query */
 /* page size for workout.ejs's contents */
@@ -395,7 +419,7 @@ header img{
         display:block;
         top:15px;
         left:100px;
-        width:90%;
+        width:80%;
 
         text-align: center;
     }

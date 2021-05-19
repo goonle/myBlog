@@ -104,7 +104,13 @@ app.get("/workout",function(req,res){
 app.get("/compose",function(req,res){
     res.render("compose")
 })
+app.get("/delete",function(req,res){
+    Workout.find({},function(err,results){
+        res.render("delete",{workout: results})
+  
+    })
 
+})
 app.post("/compose",function(req,res){
     const getit = req.body
     const newWorkout = new Workout({
@@ -118,8 +124,10 @@ app.post("/compose",function(req,res){
     // console.log(newWorkout)
     Workout.insertMany(newWorkout)
     res.redirect("/workout")
+})
 
-
+app.post("/delete",function(req,res){
+    console.log(req.body)
 })
 
 app.listen(3000, function(){
