@@ -110,6 +110,12 @@ app.get("/delete",function(req,res){
     })
 
 })
+app.get("/rest",function(req,res){
+    res.render("rest")
+})
+app.get("/diet",function(req,res){
+    res.render("diet")
+})
 app.post("/compose",function(req,res){
     const getit = req.body
     const newWorkout = new Workout({

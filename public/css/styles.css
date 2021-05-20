@@ -404,6 +404,54 @@ h1{
 .deleteData:hover .dButton{
     background-color: #e2d02a79;
 }
+
+/* rest page */
+.restBox{
+    display:    block;
+    margin:0 auto ;
+    width:680px;
+}
+.restImg1{
+    width:100%;
+    left:0;
+    opacity: 0.6;
+    /* position:absolute; */
+}
+.restBox h3{
+    margin: 50px 100px 0;
+    margin-bottom:100px;
+    position: relative;
+}
+/* diet page */
+.dietEm{
+    font-weight: bold;
+}
+.dietPic{
+    width:680px;
+    opacity: 0.1;
+    position: absolute;
+}
+.dietTable{
+    width:100%;
+    margin-bottom:30px;
+}
+.goodDiet{
+    width:40%;
+}
+.badDiet{
+    width:40%;
+}
+.dietTable div{
+    display: inline-block;
+
+}
+.dietTable li{
+    list-style-type: none;
+}
+.dietHead {
+    font-size:1.2rem;
+    font-weight:bold;
+}
     /* media query */
 /* page size for workout.ejs's contents */
 @media all and (min-width:1395px){
@@ -427,6 +475,12 @@ h1{
     .item-box{
         width:350px;
       }
+    .restBox{
+        width:80%;
+    }
+    .dietPic{
+        width:80%;
+    }
 
 }
 @media all and (max-width:1024px){
@@ -449,8 +503,8 @@ h1{
     .menu:hover .wideMenu{
         display:block;
         top:15px;
-        left:100px;
-        width:80%;
+        left:90px;
+        width:87%;
         text-align: center;
     }
 }
