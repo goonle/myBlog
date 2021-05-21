@@ -127,7 +127,9 @@ app.get("/workout/:selectedItem",function(req,res){
     })
 
 })
-
+app.get("/signup",function(req,res){
+    res.render("newsletter")
+})
 
 app.post("/compose",function(req,res){
     const getit = req.body
