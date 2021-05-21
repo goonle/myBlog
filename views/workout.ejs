@@ -8,16 +8,20 @@
     </div>
     <div class="item-box">
         <% workout.forEach((result)=>{ %>
-            <div class = "contents">
-                <div class = "contents-img"><img src="./image/<%= result.image %>" alt=""></div>
-                <div class = "contents-explain">
-                    <p>
-                        <span class = "category"><%=result.category%></span> 
-                    </p>
-                    <span class="contents-title"><%=result.title%></span>
-                    <p class="contents-by">edited at <%= result.writedTime%> by <%= result.writer%></p>
+            <form class="workoutItemButton" action="/workout" method="POST">
+                <button class="workoutItemButton" name="checkedItem" value="<%=result.title%>"  >
+                <div class = "contents" name="<%= workout._id%>">
+                    <div class = "contents-img"><img src="./image/<%= result.image %>" alt=""></div>
+                    <div class = "contents-explain">
+                        <p>
+                            <span class = "category"><%=result.category%></span> 
+                        </p>
+                        <span class="contents-title"><%=result.title%></span>
+                        <p class="contents-by">edited at <%= result.writedTime%> by <%= result.writer%></p>
+                    </div>
                 </div>
-            </div>
+            </button>
+            </form>
         <% }) %>
     
     </div>

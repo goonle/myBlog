@@ -452,6 +452,27 @@ h1{
     font-size:1.2rem;
     font-weight:bold;
 }
+/* workout-item */
+.workoutItemButton{
+    padding:0;
+    margin:0;
+    border:0;
+    background-color: #fff;
+    display: inline-block;
+    text-align: inherit;
+    cursor: pointer;
+}
+.selected h1{
+    padding-left: 20px;
+}
+.side-crop{
+    max-height: 300px;
+    overflow: hidden;
+}
+.textContentBox{
+    min-height:300px;
+}
+
     /* media query */
 /* page size for workout.ejs's contents */
 @media all and (min-width:1395px){

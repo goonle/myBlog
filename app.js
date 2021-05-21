@@ -3,6 +3,8 @@ const express = require('express');
 const {render} = require("ejs");
 const mongoose = require('mongoose');
 const app = express();
+const _ = require('lodash');
+
 
 mongoose.connect('mongodb://localhost:27017/myBlog', {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -63,9 +65,6 @@ const workout3 = new Workout({
 
 const defaultWorkouts = [workout1,workout2,workout3]
 
-
-
-
 app.get("/workout",function(req,res){
     Workout.find({},function(err,results){
         if(results.length===0){
@@ -85,21 +84,16 @@ app.get("/workout",function(req,res){
     })
 })
 
-
-
-
 app.set("view engine", "ejs");
 // urlencoded 가 있으면 res.body 사용가능
 app.use(express.urlencoded({extended:true}));
+
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
     res.render("banner");
 });
 
-app.get("/workout",function(req,res){
-    res.render("workout");
-});
 app.get("/compose",function(req,res){
     res.render("compose")
 })
@@ -116,6 +110,25 @@ app.get("/rest",function(req,res){
 app.get("/diet",function(req,res){
     res.render("diet")
 })
+app.post("/workout",function(req,res){
+    const getit = req.body;
+    const selectedItem = getit.checkedItem;
+    // console.log(selectedItem);
+    Workout.findOne({title:selectedItem},function(err,foundItem){
+        res.redirect("/workout/"+selectedItem)
+    })
+})
+app.get("/workout/:selectedItem",function(req,res){
+    Workout.findOne({title:req.params.selectedItem},function(err,foundItem){
+        if(!err){
+            console.log(foundItem)
+            res.render("workout-item",{workout:foundItem});
+        }
+    })
+
+})
+
+
 app.post("/compose",function(req,res){
     const getit = req.body
     const newWorkout = new Workout({
@@ -124,9 +137,10 @@ app.post("/compose",function(req,res){
         category: getit.category,
         writedTime: getDate(),
         writer: "Jun",
-        image:getit.image
+        image:getit.image,
+        textContent:getit.textContent
     })
-    // console.log(newWorkout)
+    //  console.log(newWorkout)
     Workout.insertMany(newWorkout)
     res.redirect("/workout")
 })
