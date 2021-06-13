@@ -65,30 +65,13 @@ const workout3 = new Workout({
 
 const defaultWorkouts = [workout1,workout2,workout3]
 
-app.get("/workout",function(req,res){
-    Workout.find({},function(err,results){
-        if(results.length===0){
-            Workout.insertMany(defaultWorkouts,function(err,results){
-                if(err){
-                    console.log("Error to insert items")
-                }else{
-                    console.log("Successfully saved default items to DB")
-                    console.log(defaultWorkouts)
-
-                }
-            })
-        }else{
-            res.render("workout",{workout: results})
-            // console.log(results)
-        }
-    })
-})
 
 app.set("view engine", "ejs");
 // urlencoded 가 있으면 res.body 사용가능
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.static("public"));
+
 
 app.get("/",function(req,res){
     res.render("banner");
@@ -110,18 +93,68 @@ app.get("/rest",function(req,res){
 app.get("/diet",function(req,res){
     res.render("diet")
 })
-app.post("/workout",function(req,res){
+
+
+app.route("/workout")
+.get(function(req,res){
+    Workout.find({},function(err,results){
+        if(results.length===0){
+            Workout.insertMany(defaultWorkouts,function(err,results){
+                if(err){
+                    console.log("Error to insert items")
+                }else{
+                    console.log("Successfully saved default items to DB")
+                    console.log(defaultWorkouts)
+
+                }
+            })
+        }else{
+            console.log(results)
+            res.render("workout",{workout: results})
+            // console.log(results)
+        }
+    })
+})
+.post(function(req,res){
     const getit = req.body;
     const selectedItem = getit.checkedItem;
-    // console.log(selectedItem);
+
+
     Workout.findOne({title:selectedItem},function(err,foundItem){
         res.redirect("/workout/"+selectedItem)
     })
 })
+
+app.post('/search',function(req,res){
+    const searchText = req.body.search.toLowerCase()
+    let searchedArray = []
+    // console.log(searchText)
+    Workout.find({},function(err, result){
+        if(err){console.log(err)}
+        else{
+            result.forEach((element)=>{
+                const lowerCasedTitle = element.title.toLowerCase()
+                if(lowerCasedTitle.includes(searchText)){
+                    // console.log(element)
+                    searchedArray.push(element)
+                }
+            })
+
+        }
+
+        res.render("workout",{workout : searchedArray})
+
+    })
+    // console.log(searchedArray)
+
+
+})
+
+
 app.get("/workout/:selectedItem",function(req,res){
     Workout.findOne({title:req.params.selectedItem},function(err,foundItem){
         if(!err){
-            console.log(foundItem)
+            // console.log(foundItem)
             res.render("workout-item",{workout:foundItem});
         }
     })

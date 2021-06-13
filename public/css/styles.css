@@ -1,6 +1,7 @@
 /* Default set */
 body{
     margin: 0;
+    width:100%;
 }
 div{
     margin:0;
@@ -141,7 +142,7 @@ header img{
 }
 
 .title .intro{
-    height: 240px;
+    height: 300px;
     width:100%;
     font-weight: bold;
     padding-bottom:40px;
@@ -151,11 +152,12 @@ header img{
     display: inline-block;
     font-size:1.6vw;
     font-family: 'Noto Sans KR', sans-serif;
+    height: 100px;
 }
 
 .intro-button-space{
     font-family: 'Noto Sans KR', sans-serif;
-    margin: 20px 0;
+    margin: 20px 0 ;
 }
 .intro-buttons{
     border: 0;
@@ -165,7 +167,7 @@ header img{
     height:40px;
     font-size: 15px;
     border-radius: 17px;
-    margin: 0 10px;
+    margin: 0 10px; 
     padding: 0 20px;
 }
 .intro-buttons:hover{
@@ -186,8 +188,7 @@ header img{
 }
 /* footer */
 .footer{
-    position: absolute;
-
+    
     margin:0;
     background-color: #aaaaaa;
     height:2rem;
@@ -472,6 +473,13 @@ h1{
 .textContentBox{
     min-height:300px;
 }
+/* mailing  */
+.mailingContent{
+    width:70%;
+    height: 100px;
+    margin: 20px auto;
+}
+
 
     /* media query */
 /* page size for workout.ejs's contents */
